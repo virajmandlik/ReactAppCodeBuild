@@ -17,4 +17,4 @@ artifacts:
     - 'assets/**/*'
     - '*.svg'
   base-directory: dist
-  name: react-app-build-project
+  name: react-app-build-project 
