@@ -11,12 +11,21 @@ phases:
     commands:
       - echo Building the React App...
       - npm run build
+      - echo "Listing contents of dist directory:"
+      - ls -la dist/
+      - echo "Listing contents of dist/assets directory:"
+      - ls -la dist/assets/
   post_build:
     commands:
-      - echo Zipping the build output...
-      - zip -r dist.zip dist/*
+      - echo "Creating zip file..."
+      - cd dist
+      - zip -r ../dist.zip .
+      - cd ..
+      - echo "Verifying zip contents:"
+      - unzip -l dist.zip
 artifacts:
   files:
     - dist.zip
   base-directory: .
-  name: react-app-build-project 
+  name: react-app-build-project
+  discard-paths: no 
