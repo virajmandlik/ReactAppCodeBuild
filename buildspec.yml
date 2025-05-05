@@ -13,5 +13,8 @@ phases:
       - npm run build
 artifacts:
   files:
-    - '**/*'
-  base-directory: dist  # Vite creates a 'dist' directory by default
+    - 'index.html'
+    - 'assets/**/*'
+    - '*.svg'
+  base-directory: dist
+  name: react-app-build-project
