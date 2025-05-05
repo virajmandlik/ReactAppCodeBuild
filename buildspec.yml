@@ -11,10 +11,12 @@ phases:
     commands:
       - echo Building the React App...
       - npm run build
+  post_build:
+    commands:
+      - echo Zipping the build output...
+      - zip -r dist.zip dist/*
 artifacts:
   files:
-    - 'index.html'
-    - 'assets/**/*'
-    - '*.svg'
-  base-directory: dist
+    - dist.zip
+  base-directory: .
   name: react-app-build-project 
