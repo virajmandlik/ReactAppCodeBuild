@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+    commands:
+      - echo Installing dependencies...
+      - npm ci  # Or npm install
+  build:
+    commands:
+      - echo Building the React App...
+      - npm run build  # creates build or dist folder
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist  # use 'build' if CRA instead of Vite
